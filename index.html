@@ -34,19 +34,28 @@
     }
 
     /* Flashing red animation */
-    @keyframes flashing-red {
+     @keyframes flashing {
       0% {
+        visibility: visible;
         color: red;
-        text-shadow: 0 0 10px red, 0 0 20px red;
       }
       50% {
-        color: #ff6666; /* Lighter red */
-        text-shadow: 0 0 10px #ff6666, 0 0 20px #ff6666;
+        visibility: hidden;
+        color: red;
       }
       100% {
+        visibility: visible;
         color: red;
-        text-shadow: 0 0 10px red, 0 0 20px red;
       }
+    }
+
+    /* Styling for news content */
+    .news-content {
+      text-align: left;
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #555;
+    }
 </style>
 	
 <body id="home">
