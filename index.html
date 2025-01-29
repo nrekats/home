@@ -18,14 +18,13 @@
 </head>
 <style>
 
-   /* Latest news section */
-    .latest-news {
+   .latest-news {
       background-color: #f2f2f2;
-      padding: 15px;
-      margin: 15px 0;
+      padding: 20px;
+      margin: 20px 0;
     }
 
-    /* Flashing red effect on title */
+    /* Flashing effect on title */
     .latest-news h2 {
       color: red;
       text-align: center;
@@ -34,27 +33,16 @@
     }
 
     /* Flashing red animation */
-     @keyframes flashing {
+    @keyframes flashing {
       0% {
-        visibility: visible;
         color: red;
       }
       50% {
-        visibility: hidden;
-        color: red;
+        color: transparent; /* Make it disappear */
       }
       100% {
-        visibility: visible;
         color: red;
       }
-    }
-
-    /* Styling for news content */
-    .news-content {
-      text-align: left;
-      margin-top: 10px;
-      font-size: 1.1rem;
-      color: #555;
     }
 </style>
 	
