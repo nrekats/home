@@ -1,3 +1,0 @@
- FirstName LastName
-
- This is the CV of FirstName LastName.
