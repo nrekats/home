@@ -16,7 +16,37 @@
 	<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
 	<!--[if lt IE 8]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
 </head>
+<style>
+	/* Latest news section */
+    .latest-news {
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin: 20px 0;
+    }
 
+    .latest-news h2 {
+      color: #333;
+      text-align: center;
+      font-size: 2rem;
+      animation: flashing 1s infinite;
+    }
+
+    /* Flashing effect */
+    @keyframes flashing {
+      0% {
+        color: red;
+        text-shadow: 0 0 10px red, 0 0 20px red;
+      }
+      50% {
+        color: yellow;
+        text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+      }
+      100% {
+        color: green;
+        text-shadow: 0 0 10px green, 0 0 20px green;
+      }
+</style>
+	
 <body id="home">
 <div class="container">
 	<h1>Homepage of Nikolaos Rekatsinas</h1>
@@ -39,6 +69,14 @@
 			Supported by H.F.R.I. project no. 01247
 		</p>
 	</div>
+	<div class="latest-news">
+    <h2>Latest News</h2>
+    <div class="news-content">
+      <p><strong>New Publication!</strong> I just released a new paper on numerical methods for PDEs. Check it out!</p>
+      <p><strong>Conference Presentation</strong> I'll be presenting at the International Computational Mathematics Conference next month.</p>
+    </div>
+  </div>
+	
 	<div class="span12 last">
 		<p style="text-align: right;"><img src="img/mugshot.png" width="294,5" height="221,5" alt="Nikolaos Rekatsinas' Photo" /></p>
 	</div>
