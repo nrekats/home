@@ -17,26 +17,33 @@
 	<!--[if lt IE 8]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
 </head>
 <style>
-	/* Latest news section */
+
+   /* Latest news section */
     .latest-news {
+      background-color: #f2f2f2;
       padding: 15px;
       margin: 15px 0;
     }
 
+    /* Flashing red effect on title */
     .latest-news h2 {
-      color: #333;
+      color: red;
       text-align: center;
       font-size: 2rem;
       animation: flashing 1s infinite;
     }
 
-    /* Flashing effect on title */
-    .latest-news h2 {
-      color: #333;
-      text-align: center;
-      font-size: 2rem;
-      animation: flashing-red 1s infinite;
-    }
+    /* Flashing red animation */
+    @keyframes flashing {
+      0% {
+        color: red;
+      }
+      50% {
+        color: white;
+      }
+      100% {
+        color: red;
+      }
 
     /* Flashing red animation */
     @keyframes flashing-red {
