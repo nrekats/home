@@ -88,22 +88,19 @@
 
 	<script>
         function toggleEducation() {
-        var content = document.getElementById("education-content");
-        if (content.style.display === "none" || content.style.display === "") {
-           content.style.display = "block"; // Show
-        } else {
-           content.style.display = "none"; // Hide
-        }
+           var content = document.getElementById("education-content");
+          content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
         }
         </script>
-		
-	<div class="education-container">
-        <button class="education-button" onclick="toggleEducation()">Education</button>
-        <div id="education-content" class="education-content">
-	<p>Ph.D., Faculty of Science, University of Amsterdam, The Netherlands, 2018</p>
-        <p>More details about education...</p>
-        </div>
-        </div>
+	
+	<h2 id="education-title" onclick="toggleEducation()" style="cursor: pointer; color: inherit;">
+    Education
+</h2>
+<div id="education-content" style="display: none;">
+    <p>Ph.D., Faculty of Science, University of Amsterdam, The Netherlands, 2018</p>
+    <p>More details about education...</p>
+</div>
+
 	
 	<h3>Education</h3>
         <ul>
