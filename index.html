@@ -92,6 +92,13 @@
           content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
         }
         </script>
+
+	<script>
+        function toggleResearch() {
+           var content = document.getElementById("research-content");
+          content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+        }
+        </script>	
 	
 	<h3 id="education-title" onclick="toggleEducation()" style="cursor: pointer; color: dark red;">
           Education
@@ -106,10 +113,10 @@
            </ul>
         </div>
 
-	<h3 id="education-title" onclick="toggleEducation()" style="cursor: pointer; color: dark red;">
+	<h3 id="research-title" onclick="toggleResearch()" style="cursor: pointer; color: dark red;">
         Research Interests
         </h3>
-        <div id="education-content" style="display: none;">
+        <div id="research-content" style="display: none;">
         <ul>
             <li>Numerical methods for PDEs</li>
             <li>Adaptive approximation</li>
