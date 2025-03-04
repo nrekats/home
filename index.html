@@ -85,7 +85,27 @@
 		<p style="text-align: right;"><img src="img/mugshot.png" width="290" height="221,5" alt="Nikolaos Rekatsinas' Photo" /></p>
 	</div>
 	<div class="span24">
-        <h3>Education</h3>
+
+	<script>
+        function toggleEducation() {
+        var content = document.getElementById("education-content");
+        if (content.style.display === "none" || content.style.display === "") {
+           content.style.display = "block"; // Show
+        } else {
+           content.style.display = "none"; // Hide
+        }
+        }
+        </script>
+		
+	<div class="education-container">
+        <button class="education-button" onclick="toggleEducation()">Education</button>
+        <div id="education-content" class="education-content">
+	<p>Ph.D., Faculty of Science, University of Amsterdam, The Netherlands, 2018</p>
+        <p>More details about education...</p>
+        </div>
+        </div>
+	
+	<h3>Education</h3>
         <ul>
             <li>Ph.D., Faculty of Science, University of Amsterdam, The Netherlands, 2018<br />
                 <em>Thesis: Optimal Adaptive Wavelet Methods for solving First Order System Least Squares</em>,<br>
