@@ -84,8 +84,15 @@
         <a href="https://www.iacm.forth.gr/">Institute of Applied & Computational Mathematics</a>, FORTH<br />
         Supported by H.F.R.I. under the “2nd Call for H.F.R.I.<br /> Research Projects to support Post-Doctoral Researchers",<br /> project no. 01247
         </p>
+
+	<script>
+        function toggleHFRI() {
+           var content = document.getElementById("HFRI Adaptsol-content");
+          content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+        }
+        </script>	
 	
-        <h3 id="HFRI Adaptsol-title" onclick="toggleResearch()" style="cursor: pointer; color: inherit;">
+        <h3 id="HFRI Adaptsol-title" onclick="toggleHFRI()" style="cursor: pointer; color: inherit;">
         HFRI Adaptsol
         </h3>
         <div id="HFRI Adaptsol-content" style="display: none;">
