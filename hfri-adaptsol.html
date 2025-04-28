@@ -41,7 +41,7 @@
 <script>
 function toggleAccordion(sectionId) {
     // First, hide all sections
-    var sections = ["members-content", "preprints-content", "publications-content", "code-content"];
+    var sections = ["members-content", "publications-content", "code-content"];
     for (var i = 0; i < sections.length; i++) {
         if (sections[i] !== sectionId) {
             document.getElementById(sections[i]).style.display = "none";
@@ -65,10 +65,6 @@ function toggleAccordion(sectionId) {
           </p>
     </ul>
 </div>
-
-<h3 onclick="toggleAccordion('preprints-content')" style="cursor: pointer; color: inherit;">
-    Preprints
-</h3>
 
 <h3 onclick="toggleAccordion('publications-content')" style="cursor: pointer; color: inherit;">
     Publications
