@@ -41,7 +41,7 @@
 <script>
 function toggleAccordion(sectionId) {
     // First, hide all sections
-    var sections = ["members-content", "publications-content", "code-content"];
+    var sections = ["members-content", "publications-content", "code-content", "contact-content"];
     for (var i = 0; i < sections.length; i++) {
         if (sections[i] !== sectionId) {
             document.getElementById(sections[i]).style.display = "none";
@@ -91,6 +91,22 @@ function toggleAccordion(sectionId) {
         <li>Additional scripts (coming soon)</li>
     </ul>
 </div>
+
+<h3 onclick="toggleAccordion('code-content')" style="cursor: pointer; color: inherit;">
+    Contact
+</h3>
+<div id="contact-content" style="display: none;">
+    <ul>
+    Institute of Applied and Computational Mathematics,<br />
+    Foundation for Research and Technology<br />
+    Nikolaou Plastira 100, Vassilika Vouton,<br />
+    GR 700 13 Heraklion, Crete,<br />
+    Greece<br />
+    Tel: +30 2810 391989<br />
+    Email (@iacm.forth.gr, @uoc.gr, @outlook.com): <strong>n.rekatsinas</strong><br />ORCID: <a href='https://orcid.org/0000-0002-7283-3306'>https://orcid.org/0000-0002-7283-3306</a></p>
+    </ul>
+</div>
+	 
 </div>	  
 <div style="text-align: center; margin-top: 100px;">
 	<hr />   
