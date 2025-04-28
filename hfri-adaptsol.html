@@ -34,6 +34,72 @@
 </div>
 
        <hr />
+
+
+
+<!-- Accordion Toggle Script -->
+<script>
+function toggleAccordion(sectionId) {
+    // First, hide all sections
+    var sections = ["members-content", "preprints-content", "publications-content", "code-content"];
+    for (var i = 0; i < sections.length; i++) {
+        if (sections[i] !== sectionId) {
+            document.getElementById(sections[i]).style.display = "none";
+        }
+    }
+    // Then toggle the clicked section
+    var content = document.getElementById(sectionId);
+    content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+}
+</script>
+
+<!-- Clickable Accordion Sections -->
+
+<h3 onclick="toggleAccordion('members-content')" style="cursor: pointer; color: inherit;">
+    Members
+</h3>
+<div id="members-content" style="display: none;">
+    <ul>
+        <p style="font-size: 15px; max-width: 1200px; margin: auto; text-align: left;">  
+	  Principal Investigator: Nikolaos Rekatsinas   
+          </p>
+    </ul>
+</div>
+
+<h3 onclick="toggleAccordion('preprints-content')" style="cursor: pointer; color: inherit;">
+    Preprints
+</h3>
+<div id="preprints-content" style="display: none;">
+    <ul>
+        <li><p style="font-size: 15px; max-width: 1200px; margin: auto; text-align: left;"> With Lewin Ernst and Karsten Urban, A posteriori certification for physics-informed neural networks, <em> preprint </em>, 2025, <a href="https://doi.org/10.48550/arXiv.2502.20336"> arXiv.2502.20336 </a> </p></li>
+        <li><p style="font-size: 15px; max-width: 1200px; margin: auto; text-align: left;">With Charalampos Makridakis, Aaron Pim, and Tristan Pryer, Deep Uzawa for kinetic transport with Lagrange enforced boundaries </p></li>
+        <li><p style="font-size: 15px; max-width: 1200px; margin: auto; text-align: left;">With Charalampos Makridakis and Tristan Pryer, Residual minimisation for transport-based optimal control </p></li>
+    </ul>
+</div>
+
+<h3 onclick="toggleAccordion('publications-content')" style="cursor: pointer; color: inherit;">
+    Publications
+</h3>
+<div id="publications-content" style="display: none;">
+    <ul>
+
+    </ul>
+</div>
+
+<h3 onclick="toggleAccordion('code-content')" style="cursor: pointer; color: inherit;">
+    Code
+</h3>
+<div id="code-content" style="display: none;">
+    <ul>
+        <li><a href="https://github.com/nrekats/" target="_blank">GitHub Repository</a></li>
+        <li>Additional scripts (coming soon)</li>
+    </ul>
+</div>
+
+
+
+	
+	
   <div style="font-size: 13px; max-width: 1200px; margin: auto; text-align: left;">	
 	<h3>Members</h3>
           <p style="font-size: 15px; max-width: 1200px; margin: auto; text-align: left;">  
@@ -44,7 +110,8 @@
         <h3>Preprints</h3>  
 	  <ul>  
 	  <li><p style="font-size: 15px; max-width: 1200px; margin: auto; text-align: left;"> With Lewin Ernst and Karsten Urban, A posteriori certification for physics-informed neural networks, <em> preprint </em>, 2025, <a href="https://doi.org/10.48550/arXiv.2502.20336"> arXiv.2502.20336 </a> </p></li>
-          </ul>
+          
+	  </ul>
 	<br><br>
 
 	<h3>Work in progress</h3>   
