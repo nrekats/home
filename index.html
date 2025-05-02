@@ -19,11 +19,18 @@
         }
 
        .latest-news h3 {
-            color: red;
+            color: black;
             text-align: center;
             font-size: 2rem;
             animation: flashing 1s infinite;
         }
+
+	    @keyframes flashing {
+            0%   { color: black;     }
+            50%  { color: red;   }
+            100% { color: black;     }
+        }
+
 
         .bio-block {
             display: flex;
@@ -39,7 +46,7 @@
         }
 
         .bio-text {
-            font-size: 15px;
+            font-size: 13px;
             text-align: left;
         }
     </style>
