@@ -1,201 +1,187 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nikolaos Rekatsinas | Postdoc</title>
+    <meta name="description" content="Homepage of Nikolaos Rekatsinas, Postdoctoral Researcher">
+    <meta name="keywords" content="numerical methods, PDEs, adaptive methods, computational mathematics">
+    <meta name="author" content="Nikolaos Rekatsinas">
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
-<head profile="http://www.w3.org/2005/10/profile">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="Homepage of Nikolaos Rekatsinas, Postdoctoral Researcher" />
-	<meta name="keywords" content="numerical methods, PDEs, adaptive methods, computational mathematics" />
-	<meta name="author" content="Nikolaos Rekatsinas" />
+    <style>
+        .latest-news {
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin: 20px 0;
+        }
 
-	<title>Nikolaos Rekatsinas | Postdoc</title>
+        .latest-news h3 {
+            color: red;
+            text-align: center;
+            font-size: 2rem;
+            animation: flashing 1s infinite;
+        }
 
-	<!-- TEM CSS Framework -->
-	<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection">
-	<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
-	<!--[if lt IE 8]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+        @keyframes flashing {
+            0%   { color: red;    text-shadow: 0 0 10px red; }
+            50%  { color: yellow; text-shadow: 0 0 10px yellow; }
+            100% { color: green;  text-shadow: 0 0 10px green; }
+        }
+
+        .bio-block {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        .bio-block img {
+            flex-shrink: 0;
+        }
+
+        .bio-text {
+            font-size: 15px;
+            text-align: left;
+        }
+    </style>
+
+    <script>
+    function toggleAccordion(sectionId) {
+        const sections = ["adaptsol", "education", "research", "publications", "teaching"];
+        for (let id of sections) {
+            if (id !== sectionId) document.getElementById(id).style.display = "none";
+        }
+        const el = document.getElementById(sectionId);
+        el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    }
+    </script>
 </head>
-<style>
+<body>
 
-   .latest-news {
-      background-color: #f2f2f2;
-      padding: 20px;
-      margin: 20px 0;
-    }
+<div style="text-align: center; margin-top: 50px;">
+    <h2>Homepage of Nikolaos Rekatsinas</h2>
+    <h3 class="fancy" style="margin-top: -0.5em;">Postdoctoral Researcher</h3>
+    <hr />
+</div>
 
-    /* Flashing effect on title */
-    .latest-news h2 {
-      color: red;
-      text-align: center;
-      font-size: 2rem;
-      animation: flashing 1s infinite;
-    }
+<div class="latest-news">
+    <h3>Latest News</h3>
+    <p><strong>[Feb 2025] Preprint:</strong> A posteriori certification for PINNs with <a href="#">Ernst & Urban</a>, <a href="https://doi.org/10.48550/arXiv.2502.20336">arXiv.2502.20336</a></p>
+    <p><strong>[Feb 2025] Teaching:</strong> Numerical Linear Algebra, Univ. of Crete</p>
+    <p><strong>[Jan 2025] Talk:</strong> BIT Anniversary Conference, Uppsala University</p>
+</div>
 
-    /* Flashing animation */
-    @keyframes flashing {
-      0% {
-        color: red;
-        text-shadow: 0 0 10px red, 0 0 20px red;
-      }
-      50% {
-        color: yellow;
-        text-shadow: 0 0 10px yellow, 0 0 20px yellow;
-      }
-      100% {
-        color: green;
-        text-shadow: 0 0 10px green, 0 0 20px green;
-      }
-    }
-</style>
-	
-<body id="home">
-<div class="container">
-	<h2>Homepage of Nikolaos Rekatsinas</h2>
-	<h3 class="fancy" style="margin-top: -0.5em;">Postdoctoral Researcher</h3>
-	<hr />
+<div class="bio-block">
+    <p><img src="img/mugshot.png" width="235" height="177.2" alt="Nikolaos Rekatsinas' Photo" /></p>
+    <div class="bio-text">
+        <p><strong>Contact Information:</strong><br>
+        Institute of Applied and Computational Mathematics,<br>
+        Foundation for Research and Technology<br>
+        Nikolaou Plastira 100, Vassilika Vouton,<br>
+        GR 700 13 Heraklion, Crete, Greece<br>
+        Tel: +30 2810 391989<br>
+        Email (@iacm.forth.gr, @uoc.gr, @outlook.com): <strong>n.rekatsinas</strong><br>
+        ORCID: <a href='https://orcid.org/0000-0002-7283-3306'>0000-0002-7283-3306</a></p>
 
-	<div class="span12">
-		<p><strong>Contact Information:</strong><br />
-		Institute of Applied and Computational Mathematics,<br />
-		Foundation for Research and Technology<br />
-		Nikolaou Plastira 100, Vassilika Vouton,<br />
-		GR 700 13 Heraklion, Crete,<br />
-		Greece<br />
-		Tel: +30 2810 391989<br />
-		Email (@iacm.forth.gr, @uoc.gr, @outlook.com): <strong>n.rekatsinas</strong><br />ORCID: <a href='https://orcid.org/0000-0002-7283-3306'>https://orcid.org/0000-0002-7283-3306</a></p>
-	<div class="latest-news h2">
-        <h3>Latest News</h3>
-	<div class="news-content">
-	<p><strong> [Feb 2025] Preprint</strong> "A posteriori certification for physics-informed neural networks", with <a href="https://www.uni-ulm.de/mawi/institut-fuer-numerische-mathematik/institut/mitarbeiter/#">Lewin Ernst (Ulm)</a> and <a href="https://www.uni-ulm.de/mawi/institut-fuer-numerische-mathematik/institut/mitarbeiter/prof-dr-karsten-urban/">Karsten Urban (Ulm)</a>, <a href="https://doi.org/10.48550/arXiv.2502.20336">arXiv.2502.20336</a></p>	
-        <p><strong> [Feb 2025] Teaching </strong> "Numerical Linear Algebra" for the spring semester at B.Sc. Mathematics, University of Crete. </p>
-	<p><strong> [Jan 2025] Conference Talk</strong> "Certification of PINN solutions to PDEs" (Joint work with Lewin Ernst (Ulm) and Karsten Urban (Ulm), at the International Conference on numerical mathematics and scientific computing on the 65th Anniversary of the journal BIT, Uppsala University (Sweden).</p>
-	</div>
-	</div>
-        </div>
-	
-	<div class="span12 last">
-		<p style="text-align: left;"><img src="img/mugshot.png" width="235" height="177.2" alt="Nikolaos Rekatsinas' Photo" /></p>
-	</div>
-
-	<h3>Current Position</h3>
-        <p>
-        <strong>Principal Investigator</strong>, Adaptive methods for solving PDEs (Adaptsol) <br />
+        <h3>Current Position</h3>
+        <p><strong>Principal Investigator</strong>, Adaptive methods for solving PDEs (Adaptsol) <br />
         <a href="https://www.iacm.forth.gr/">Institute of Applied & Computational Mathematics</a>, FORTH<br />
-        Supported by H.F.R.I. under the “2nd Call for H.F.R.I.<br /> Research Projects to support Post-Doctoral Researchers",<br /> project no. 01247
+        Supported by H.F.R.I. under the “2nd Call for H.F.R.I.<br /> Research Projects to support Post-Doctoral Researchers",<br /> project no. 01247</p>
+    </div>
+</div>
+
+    <p style="text-align: left;"><img src="img/mugshot.png" width="235" height="177.2" alt="Nikolaos Rekatsinas' Photo" /></p>
+  <hr />
+    <!-- Accordion: HFRI Adaptsol -->
+    <h3 onclick="toggleAccordion('adaptsol')" style="cursor: pointer;">HFRI Adaptsol</h3>
+    <div id="adaptsol" style="display: none;">
+        <p>
+            This is the webpage of the project <strong>"Adaptive methods for solving PDEs (Adaptsol)"</strong>, supported by the Hellenic Foundation for Research and Innovation (<a href="https://www.elidek.gr/en/homepage/">H.F.R.I.</a>) under the "2nd Call for H.F.R.I. Research Projects to Support Postdoctoral Researchers" (<a href="https://www.elidek.gr/wp-content/uploads/2018/11/27.-%CE%91%CE%BD%CE%B1%CE%BA-%CE%A7%CF%81%CE%B7%CE%BC_%CE%95%CE%A0259_2%CE%B7%CE%9C%CE%94_eng.pdf">SA.5, Proposal No: 1247</a>), hosted by the <a href="https://www.iacm.forth.gr/">Institute of Applied & Computational Mathematics</a>, <a href="https://www.forth.gr/en/home/">FORTH</a>.
         </p>
-
-	<script>
-        function toggleHFRI() {
-           var content = document.getElementById("HFRI Adaptsol-content");
-          content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
-        }
-        </script>	
-	
-        <h3 id="HFRI Adaptsol-title" onclick="toggleHFRI()" style="cursor: pointer; color: inherit;">
-        HFRI Adaptsol
-        </h3>
-        <div id="HFRI Adaptsol-content" style="display: none;">
-	<ul>
-		<a href="hfri-adaptsol.html"> Adaptive methods for solving PDEs (Adaptsol)</a>
-	</ul>
-	</div>
-	
-	<div class="span24">
-
-	<script>
-        function toggleEducation() {
-           var content = document.getElementById("education-content");
-          content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
-        }
-        </script>
-
-	<script>
-        function toggleResearch() {
-           var content = document.getElementById("research-content");
-          content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
-        }
-        </script>	
-
-	<script>
-        function togglePub() {
-           var content = document.getElementById("pub-content");
-          content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
-        }
-        </script>	
-
-	<script>
-        function toggleTeach() {
-           var content = document.getElementById("teach-content");
-          content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
-        }
-        </script>	
-	
-	<h3 id="education-title" onclick="toggleEducation()" style="cursor: pointer; color: inherit;">
-          Education
-        </h3>
-        <div id="education-content" style="display: none;">
-           <ul>
-            <li>Ph.D., Faculty of Science, University of Amsterdam, The Netherlands, 2018<br />
-                <em>Thesis: Optimal Adaptive Wavelet Methods for solving First Order System Least Squares</em>,<br>
-                Advisor: <a href="https://staff.fnwi.uva.nl/r.p.stevenson/">Prof. Rob Stevenson</a></li>
-            <li>M.Sc., Applied Mathematical Sciences, Heriot-Watt University, Edinburgh, Scotland, 2013</li>
-            <li>B.Sc., Mathematics, University of the Aegean, Samos, Greece, 2012</li>
-           </ul>
+        <div style="text-align: center; margin: 30px 0;">
+            <video autoplay loop muted playsinline style="width: 27%; height: auto;">
+                <source src="img/animation.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
+        <p style="text-align: center;"><img src="img/hfri.png" width="400" height="111" alt="HFRI funding" /></p>
+        <p><a href="hfri-adaptsol.html">Visit dedicated project page</a></p>
+    </div>
 
-	<h3 id="research-title" onclick="toggleResearch()" style="cursor: pointer; color: inherit;">
-        Research Interests
-        </h3>
-        <div id="research-content" style="display: none;">
+    <!-- Accordion: Education -->
+    <h3 onclick="toggleAccordion('education')" style="cursor: pointer;">Education</h3>
+    <div id="education" style="display: none;">
+        <ul>
+            <li>Ph.D., University of Amsterdam, 2018<br />
+                <em>Thesis: Optimal Adaptive Wavelet Methods for solving First Order System Least Squares</em><br />
+                Advisor: <a href="https://staff.fnwi.uva.nl/r.p.stevenson/">Prof. Rob Stevenson</a></li>
+            <li>M.Sc., Applied Mathematical Sciences, Heriot-Watt University, 2013</li>
+            <li>B.Sc., Mathematics, University of the Aegean, Samos, 2012</li>
+        </ul>
+    </div>
+
+    <!-- Accordion: Research Interests -->
+    <h3 onclick="toggleAccordion('research')" style="cursor: pointer;">Research Interests</h3>
+    <div id="research" style="display: none;">
         <ul>
             <li>Numerical methods for PDEs</li>
             <li>Adaptive approximation</li>
             <li>Multiscale methods</li>
         </ul>
-	</div>	
+    </div>
 
-	<h3 id="pub-title" onclick="togglePub()" style="cursor: pointer; color: inherit;">
-        Publications
-        </h3>
-	<div id="pub-content" style="display: none;">	
-		<ul>
-			<li>With <a href="https://www.uni-ulm.de/mawi/institut-fuer-numerische-mathematik/institut/mitarbeiter/#">Lewin Ernst</a> and <a href="https://www.uni-ulm.de/mawi/institut-fuer-numerische-mathematik/institut/mitarbeiter/prof-dr-karsten-urban/">Karsten Urban</a>, A posteriori certification for physics-informed neural networks, <em> preprint </em>, 2025, <a href="https://doi.org/10.48550/arXiv.2502.20336"> arXiv.2502.20336 </a></li>
-			<li>With <a href="https://staff.fnwi.uva.nl/r.p.stevenson/">Rob Stevenson</a>, An optimal adaptive tensor product wavelet solver of a space-time FOSLS formulation of parabolic evolution problems, <em>Advances in Computational Mathematics</em>, 2019, <a href="https://doi.org/10.1007/s10444-018-9644-2">doi:10.1007/s10444-018-9644-2</a></li>
-			<li>With <a href="https://staff.fnwi.uva.nl/r.p.stevenson/">Rob Stevenson</a>, An optimal adaptive wavelet method for first-order system least squares, <em>Numerische Mathematik</em>, 140(1),191-237, 2018, <a href="https://doi.org/10.1007/s00211-018-0961-7">doi:10.1007/s00211-018-0961-7</a></li>
-			<li>With <a href="https://staff.fnwi.uva.nl/r.p.stevenson/">Rob Stevenson</a>, A quadratic finite element wavelet Riesz basis, <em>International Journal of Wavelets</em>, 2018, <a href="https://doi.org/10.1142/S0219691318500339">doi:10.1142/S0219691318500339</a></li>  
-			
-			<li>Optimal Adaptive Wavelet Methods for solving First Order System Least Squares, Ph.D. Thesis, UvA-Dare (Digital Academic Repository), <a href="https://hdl.handle.net/11245.1/70e4d2bc-76ab-414f-840d-0ddaf18fce75">hdl:11245.1/70e4d2bc</a></li>
-		</ul>
-	</div>
+    <!-- Accordion: Publications -->
+    <h3 onclick="toggleAccordion('publications')" style="cursor: pointer;">Publications</h3>
+    <div id="publications" style="display: none;">
+        <ul>
+            <li>With Lewin Ernst and Karsten Urban, A posteriori certification for physics-informed neural networks, <em>preprint</em>, 2025, <a href="https://doi.org/10.48550/arXiv.2502.20336">arXiv</a></li>
+            <li>With Rob Stevenson, Adaptive tensor product wavelet solver, <em>Adv. Comp. Math.</em>, 2019, <a href="https://doi.org/10.1007/s10444-018-9644-2">doi</a></li>
+            <li>Adaptive wavelet method for FOSLS, <em>Numer. Math.</em>, 2018, <a href="https://doi.org/10.1007/s00211-018-0961-7">doi</a></li>
+            <li>Wavelet Riesz basis, <em>IJWMIP</em>, 2018, <a href="https://doi.org/10.1142/S0219691318500339">doi</a></li>
+            <li>Ph.D. Thesis: <a href="https://hdl.handle.net/11245.1/70e4d2bc-76ab-414f-840d-0ddaf18fce75">hdl</a></li>
+        </ul>
+    </div>
 
-	<h3 id="teach-title" onclick="toggleTeach()" style="cursor: pointer; color: inherit;">
-        Teaching
-        </h3>
-	<div id="teach-content" style="display: none;">
-		<h4>Current</h4>
-	        <ul>
-          <h4>Lecturing at B.Sc. Mathematics, University of Crete:</h4>
-			<li>Numerical Linear Algebra, Spring Semester 2024-2025</li>	
-		</ul>
-		
-		<h4>Past</h4>
-		<ul>
-          <h4>Lecturing at B.Sc. Mathematics, University of Patras:</h4>
-			<li>Numerical solution of transcendental equations, Fall Semester 2022-2023</li>
-			<li>Numerical solution of ODEs, Spring Semester 2022-2023</li>
-			<li>Numerical solution of PDEs, Spring Semester 2022-2023, 2021-2022</li>
-			<li>Numerical Linear Algebra, Fall Semester 2021-2022</li>
-			<li>Discrete Mathematics, Spring Semester 2021-2022</li><br />
-          <h4>Tutoring at University of Amsterdam:</h4>
-			<li>Numerical Algorithms, M.Sc. Computational Sciences, Fall Semester 2016-2017</li>
-			<li>Numerical Analysis, B.Sc. Mathematics, Spring Semester 2015-2016, Spring Semester 2014-2015, Fall Semester 2013-2014</li>
-			<li>Differential Equations, B.Sc. Mathematics, Fall Semester 2015-2016, Fall Semester 2014-2015, Spring Semester 2013-2014, Spring Semester 2012-2013</li>
-		</ul>
-	</div>	
-	
-	</div>
-	<hr />
+    <!-- Accordion: Teaching -->
+    <h3 onclick="toggleAccordion('teaching')" style="cursor: pointer;">Teaching</h3>
+    <div id="teaching" style="display: none;">
+        <h4>Current</h4>
+        <ul>
+            <li><strong>University of Crete:</strong>
+                <ul><li>Numerical Linear Algebra, Spring 2024–2025</li></ul>
+            </li>
+        </ul>
+        <h4>Past</h4>
+        <ul>
+            <li><strong>University of Patras:</strong>
+                <ul>
+                    <li>Transcendental Equations, Fall 2022–2023</li>
+                    <li>ODEs, Spring 2022–2023</li>
+                    <li>PDEs, Spring 2021–2023</li>
+                    <li>Numerical Linear Algebra, Fall 2021–2022</li>
+                    <li>Discrete Mathematics, Spring 2021–2022</li>
+                </ul>
+            </li>
+            <li><strong>University of Amsterdam:</strong>
+                <ul>
+                    <li>Numerical Algorithms (M.Sc.), Fall 2016–2017</li>
+                    <li>Numerical Analysis (B.Sc.), 2014–2016</li>
+                    <li>Differential Equations (B.Sc.), 2012–2016</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </div>
+
+<div style="text-align: center; margin-top: 50px;">
+    <hr>
+    <p>&copy; 2025 Nikolaos Rekatsinas</p>
+</div>
+
 </body>
 </html>
