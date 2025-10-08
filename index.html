@@ -93,61 +93,7 @@
         Nikolaou Plastira 100, Vassilika Vouton,<br>
         GR 700 13 Heraklion, Crete, Greece<br>
         Tel: +30 2810 391989<br>
-			
-		<p>
-  Email (@iacm.forth.gr, @uoc.gr, @outlook.com):
-  <strong>n.rekatsinas</strong>
-  <span id="copy-status" style="margin-left:8px;font-size:0.9em;"></span>
-</p>
-
-<div id="email-buttons"></div>
-
-<noscript>
-  <!-- No-JS fallback (harder to scrape than plain text but still readable) -->
-  <p>
-    i) n&#46;rekatsinas [at] iacm&#46;forth&#46;gr<br>
-    ii) n&#46;rekatsinas [at] uoc&#46;gr<br>
-    iii) n&#46;rekatsinas [at] outlook&#46;com
-  </p>
-</noscript>
-
-<script>
-  // base64-encoded to avoid plain-text emails in source
-  const userB64 = "bi5yZWthdHNpbmFz";                 // "n.rekatsinas"
-  const domainsB64 = [
-    ["aWFjbS5mb3J0aC5ncg==", "iacm.forth.gr"],
-    ["dW9jLmdy",             "uoc.gr"],
-    ["b3V0bG9vay5jb20=",     "outlook.com"]
-  ];
-
-  const user = atob(userB64);
-  const container = document.getElementById("email-buttons");
-  const status = document.getElementById("copy-status");
-
-  function makeBtn(label, full) {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.textContent = "Copy " + label;
-    btn.style.marginRight = "8px";
-    btn.onclick = async () => {
-      try {
-        await navigator.clipboard.writeText(full);
-        status.textContent = "Copied: " + label;
-        setTimeout(() => (status.textContent = ""), 2500);
-      } catch {
-        status.textContent = "Copy failed. Right-click > Copy.";
-        setTimeout(() => (status.textContent = ""), 2500);
-      }
-    };
-    return btn;
-  }
-
-  domainsB64.forEach(([d64, pretty]) => {
-    const domain = atob(d64);
-    const email = user + "@" + domain;
-    container.appendChild(makeBtn(user + "@" + pretty, email));
-  });
-</script>
+		Email:<strong>n [dot] rekatsinas</strong><br> [at] outlook.com, [at] iacm.forth.gr)	
         ORCID: <a href='https://orcid.org/0000-0002-7283-3306'>0000-0002-7283-3306</a></p>
     </div>
 </div>
