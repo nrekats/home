@@ -78,6 +78,14 @@ function toggleAccordion(sectionId) {
 
 /* subsection accordion */
 function toggleSubAccordion(sectionId) {
+    const subsections = ["turing", "adaptsol"];
+
+    for (let id of subsections) {
+        if (id !== sectionId) {
+            document.getElementById(id).style.display = "none";
+        }
+    }
+
     const el = document.getElementById(sectionId);
 
     el.style.display =
