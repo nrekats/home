@@ -57,17 +57,36 @@
         padding-left: 0;
     }
     </style>
-
     <script>
-    function toggleAccordion(sectionId) {
-        const sections = ["education", "research", "publications", "projects", "teaching"];
-        for (let id of sections) {
-            if (id !== sectionId) document.getElementById(id).style.display = "none";
+function toggleAccordion(sectionId) {
+    const sections = ["education", "research", "publications", "projects", "teaching"];
+
+    for (let id of sections) {
+        if (id !== sectionId) {
+            document.getElementById(id).style.display = "none";
         }
-        const el = document.getElementById(sectionId);
-        el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
     }
-    </script>
+
+    const el = document.getElementById(sectionId);
+
+    el.style.display =
+        (el.style.display === "none" || el.style.display === "")
+        ? "block"
+        : "none";
+}
+
+
+/* subsection accordion */
+function toggleSubAccordion(sectionId) {
+    const el = document.getElementById(sectionId);
+
+    el.style.display =
+        (el.style.display === "none" || el.style.display === "")
+        ? "block"
+        : "none";
+}
+</script>
+    
 </head>
 <body>
 
