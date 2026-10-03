@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add("dark-mode");
+            }
+        })();
+    </script>
+
     <title>Nikolaos Rekatsinas | Homepage</title>
     <meta name="description" content="Homepage of Nikolaos Rekatsinas, Postdoctoral Researcher">
     <meta name="keywords" content="numerical methods, PDEs, adaptive methods, computational mathematics">
@@ -17,19 +28,18 @@
             margin: 20px 0;
         }
 
-       .latest-news h3 {
+        .latest-news h3 {
             color: black;
             text-align: left;
             font-size: 18px;
             animation: flashing 1s infinite;
         }
 
-	    @keyframes flashing {
-            0%   { color: black;     }
-            50%  { color: red;   }
-            100% { color: black;     }
+        @keyframes flashing {
+            0%   { color: black; }
+            50%  { color: red; }
+            100% { color: black; }
         }
-
 
         .bio-block {
             display: flex;
@@ -49,14 +59,84 @@
             text-align: left;
         }
 
-		#publications h4 {
-        margin-left: 0;
-    }
-    #publications ul {
-        margin-left: 1.2em; /* consistent indent */
-        padding-left: 0;
-    }
+        #publications h4 {
+            margin-left: 0;
+        }
+
+        #publications ul {
+            margin-left: 1.2em;
+            padding-left: 0;
+        }
+
+        body {
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        html.dark-mode body {
+            background-color: #161616 !important;
+            color: #e8e8e8 !important;
+        }
+
+        html.dark-mode h1,
+        html.dark-mode h2,
+        html.dark-mode h3,
+        html.dark-mode h4,
+        html.dark-mode h5,
+        html.dark-mode h6,
+        html.dark-mode p,
+        html.dark-mode li,
+        html.dark-mode .bio-text {
+            color: #e8e8e8;
+        }
+
+        html.dark-mode a {
+            color: #8ab4f8 !important;
+        }
+
+        html.dark-mode a:visited {
+            color: #c7a9ff !important;
+        }
+
+        html.dark-mode hr {
+            border-color: #4a4a4a !important;
+        }
+
+        html.dark-mode .latest-news h3 {
+            animation: flashing-dark 1s infinite;
+        }
+
+        @keyframes flashing-dark {
+            0%   { color: #e8e8e8; }
+            50%  { color: #ff6b6b; }
+            100% { color: #e8e8e8; }
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 18px;
+            right: 22px;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #999;
+            border-radius: 50%;
+            background: white;
+            color: #222;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        html.dark-mode .theme-toggle {
+            background: #222;
+            color: #eee;
+            border-color: #666;
+        }
+
+        .theme-toggle:hover {
+            opacity: 0.8;
+        }
     </style>
+
     <script>
 function toggleAccordion(sectionId) {
     const sections = ["education", "research", "publications", "projects", "teaching"];
@@ -93,14 +173,38 @@ function toggleSubAccordion(sectionId) {
         ? "block"
         : "none";
 }
+
+
+/* dark mode */
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("theme-toggle");
+
+    function updateButton() {
+        const dark = document.documentElement.classList.contains("dark-mode");
+        button.textContent = dark ? "☀" : "☾";
+        button.title = dark ? "Switch to light mode" : "Switch to dark mode";
+    }
+
+    updateButton();
+
+    button.addEventListener("click", function () {
+        document.documentElement.classList.toggle("dark-mode");
+        const dark = document.documentElement.classList.contains("dark-mode");
+        localStorage.setItem("theme", dark ? "dark" : "light");
+        updateButton();
+    });
+});
 </script>
     
 </head>
+
 <body>
+
+<button id="theme-toggle" class="theme-toggle" type="button" title="Switch to dark mode">☾</button>
 
 <div style="text-align: center; margin-top: 50px;">
     <h2>Homepage of Nikolaos Rekatsinas</h2>
-	<h3 class="fancy" style="margin-top: -0.5em;">Postdoctoral Researcher</h3>
+    <h3 class="fancy" style="margin-top: -0.5em;">Postdoctoral Researcher</h3>
     <hr />
 </div>
 
@@ -117,8 +221,8 @@ function toggleSubAccordion(sectionId) {
     </div>
 </div>
 
-  <hr />
-  <div style="font-size: 13px; max-width: 1200px; margin: auto; text-align: left;">   
+<hr />
+<div style="font-size: 13px; max-width: 1200px; margin: auto; text-align: left;">   
     
     <!-- Accordion: Education -->
     <h3 onclick="toggleAccordion('education')" style="cursor: pointer;">Education</h3>
@@ -146,7 +250,7 @@ function toggleSubAccordion(sectionId) {
     <h3 onclick="toggleAccordion('publications')" style="cursor: pointer;">Publications</h3>
     <div id="publications" style="display: none;">
         <ul>
-		    <li>With <a href="https://tristanpryer.com/">Tristan Pryer</a>,
+            <li>With <a href="https://tristanpryer.com/">Tristan Pryer</a>,
             Residual minimisation for transport-based optimal control, <em>submitted</em>, 2026, [<a href="papers/kineticpdecon.pdf" target="_blank">PDF</a>]</li>
 
             <li>With <a href="https://www.uni-ulm.de/mawi/institut-fuer-numerische-mathematik/institut/mitarbeiter/#">Lewin Ernst</a>
@@ -155,7 +259,7 @@ function toggleSubAccordion(sectionId) {
             <em>submitted</em>, 2025,
             <a href="https://doi.org/10.48550/arXiv.2502.20336">arXiv.2502.20336</a></li>
 
-		    <li>With <a href="https://www.iacm.forth.gr/component/quix/91-people-makridakis/">Charalampos Makridakis</a>,
+            <li>With <a href="https://www.iacm.forth.gr/component/quix/91-people-makridakis/">Charalampos Makridakis</a>,
             <a href="https://researchportal.bath.ac.uk/en/persons/aaron-pim">Aaron Pim</a>,
             and <a href="https://tristanpryer.com/">Tristan Pryer</a>,
             Deep Uzawa for kinetic transport with Lagrange enforced boundaries,
@@ -182,133 +286,125 @@ function toggleSubAccordion(sectionId) {
             <a href="https://hdl.handle.net/11245.1/70e4d2bc-76ab-414f-840d-0ddaf18fce75">
                 hdl:11245.1/70e4d2bc
             </a></li>
-    </ul>
-</div>
-
-<!-- Accordion: Projects -->
-<h3 onclick="toggleAccordion('projects')" style="cursor: pointer;">
-    Projects
-</h3>
-
-<div id="projects" style="display: none;">
-
-    <div style="margin-left: 25px;">
-
-	<!-- TURING project -->
-    <h4 onclick="toggleSubAccordion('turing')"
-        style="cursor: pointer;">
-        TURING-EU
-    </h4>
-
-    <div id="turing" style="display: none;">
-        <p>
-            <strong>Postdoctoral Researcher</strong> at the
-            <a href="https://www.iacm.forth.gr/">
-                Institute of Applied &amp; Computational Mathematics
-            </a>,
-            <a href="https://www.forth.gr/en/home/">FORTH</a>,
-            in the
-            <a href="https://cordis.europa.eu/project/id/101215032"
-               target="_blank">
-                <strong>TURING (Trustworthy Unified Robust Intelligent Generative Systems)</strong>
-            </a>
-            project, funded by the European Union under Horizon Europe
-            (Grant Agreement No. 101215032; 2025–2028).
-        </p>
-
-        <p>
-            The project develops robust AI-driven methods and generative
-            models for scientific and engineering applications.
-        </p>
-
-        <p style="text-align: center; margin: 30px 0;">
-            <a href="https://cordis.europa.eu/project/id/101215032"
-               target="_blank">
-                <img src="img/Turing.png"
-                     style="width: 100px; max-width: 90%; height: auto;"
-                     alt="Horizon Europe TURING project">
-            </a>
-        </p>
+        </ul>
     </div>
-	        <h4 onclick="toggleSubAccordion('adaptsol')"
-            style="cursor: pointer;">
-            Adaptsol-HFRI
-        </h4>
 
-        <div id="adaptsol" style="display: none;">
-		<p>
-		    <strong>Principal Investigator</strong> of the
-		    <strong>Adaptive methods for solving PDEs (Adaptsol)</strong>
-		    </a> project, supported by the Hellenic Foundation for Research and Innovation
-		    (<a href="https://www.elidek.gr/en/homepage/">H.F.R.I.</a>)
-		    under the "2nd Call for H.F.R.I. Research Projects to Support
-		    Postdoctoral Researchers", hosted by the <a href="https://www.iacm.forth.gr/">
-			Institute of Applied &amp; Computational Mathematics</a>,
-		    <a href="https://www.forth.gr/en/home/">FORTH</a> (Project No. 1247; 2021-2025)
+    <!-- Accordion: Projects -->
+    <h3 onclick="toggleAccordion('projects')" style="cursor: pointer;">Projects</h3>
 
-			<br><br>
-			The Adaptsol developed and analysed numerical methods for partial differential equations, 
-			drawing on adaptive approximation and variational approaches. 
-			Particular emphasis was placed on a posteriori error estimation and multiscale wavelet techniques, 
-			and on the analysis of residual-based and constrained variational formulations for transport and kinetic
-			problems, with applications to neural-network approximation.
-		</p>
+    <div id="projects" style="display: none;">
 
-        <div style="text-align: center; margin: 30px 0;">
-            <video autoplay loop muted playsinline
-                   style="width: 27%; height: auto;">
-                <source src="img/animation.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div style="margin-left: 25px;">
+
+            <!-- TURING project -->
+            <h4 onclick="toggleSubAccordion('turing')" style="cursor: pointer;">TURING-EU</h4>
+
+            <div id="turing" style="display: none;">
+                <p>
+                    <strong>Postdoctoral Researcher</strong> at the
+                    <a href="https://www.iacm.forth.gr/">Institute of Applied &amp; Computational Mathematics</a>,
+                    <a href="https://www.forth.gr/en/home/">FORTH</a>,
+                    in the
+                    <a href="https://cordis.europa.eu/project/id/101215032" target="_blank">
+                    <strong>TURING (Trustworthy Unified Robust Intelligent Generative Systems)</strong>
+                    </a>
+                    project, funded by the European Union under Horizon Europe
+                    (Grant Agreement No. 101215032; 2025–2028).
+                </p>
+
+                <p>
+                    The project develops robust AI-driven methods and generative
+                    models for scientific and engineering applications.
+                </p>
+
+                <p style="text-align: center; margin: 30px 0;">
+                    <a href="https://cordis.europa.eu/project/id/101215032" target="_blank">
+                    <img src="img/Turing.png"
+                         style="width: 100px; max-width: 90%; height: auto;"
+                         alt="Horizon Europe TURING project">
+                    </a>
+                </p>
+            </div>
+
+            <h4 onclick="toggleSubAccordion('adaptsol')" style="cursor: pointer;">Adaptsol-HFRI</h4>
+
+            <div id="adaptsol" style="display: none;">
+                <p>
+                    <strong>Principal Investigator</strong> of the
+                    <strong>Adaptive methods for solving PDEs (Adaptsol)</strong>
+                    project, supported by the Hellenic Foundation for Research and Innovation
+                    (<a href="https://www.elidek.gr/en/homepage/">H.F.R.I.</a>)
+                    under the "2nd Call for H.F.R.I. Research Projects to Support
+                    Postdoctoral Researchers", hosted by the <a href="https://www.iacm.forth.gr/">
+                    Institute of Applied &amp; Computational Mathematics</a>,
+                    <a href="https://www.forth.gr/en/home/">FORTH</a> (Project No. 1247; 2021-2025)
+
+                    <br><br>
+                    The Adaptsol developed and analysed numerical methods for partial differential equations, 
+                    drawing on adaptive approximation and variational approaches. 
+                    Particular emphasis was placed on a posteriori error estimation and multiscale wavelet techniques, 
+                    and on the analysis of residual-based and constrained variational formulations for transport and kinetic
+                    problems, with applications to neural-network approximation.
+                </p>
+
+                <div style="text-align: center; margin: 30px 0;">
+                    <video autoplay loop muted playsinline
+                           style="width: 27%; height: auto;">
+                        <source src="img/animation.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <p style="text-align: center;">
+                    <img src="img/hfri.png"
+                         style="width: 200px; max-width: 90%; height: auto;"
+                         alt="HFRI funding">
+                </p>
+            </div>
         </div>
-
-        <p style="text-align: center;">
-            <img src="img/hfri.png"
-                 style="width: 200px; max-width: 90%; height: auto;"
-                 alt="HFRI funding">
-        </p>
     </div>
-  </div> 
-</div>
-<h3 onclick="toggleAccordion('teaching')" style="cursor: pointer;">Teaching</h3>
-<div id="teaching" style="display: none; font-size: 13px;">
-  <p><strong>Lecturing at B.Sc. Mathematics, University of Crete:</strong></p>
-  <ul style="list-style-type: square;">
-    <li>Numerical Linear Algebra, Spring Semester 2024-2025</li>
-  </ul>
-	
-  <p><strong>Lecturing at B.Sc. Mathematics, University of Patras:</strong></p>
-  <ul style="list-style-type: square;">
-    <li>Numerical solution of transcendental equations, Fall Semester 2022-2023</li>
-    <li>Numerical solution of ODEs, Spring Semester 2022-2023</li>
-    <li>Numerical solution of PDEs, Spring Semester 2022-2023, 2021-2022</li>
-    <li>Numerical Linear Algebra, Fall Semester 2021-2022</li>
-    <li>Discrete Mathematics, Spring Semester 2021-2022</li>
-  </ul>
 
-  <p><strong>Tutoring at University of Amsterdam:</strong></p>
-  <ul style="list-style-type: square;">
-    <li>Numerical Algorithms, M.Sc. Computational Sciences, Fall Semester 2016-2017</li>
-    <li>Numerical Analysis, B.Sc. Mathematics, Spring Semester 2015-2016, Spring Semester 2014-2015, Fall Semester 2013-2014</li>
-    <li>Differential Equations, B.Sc. Mathematics, Fall Semester 2015-2016, Fall Semester 2014-2015, Spring Semester 2013-2014, Spring Semester 2012-2013</li>
-  </ul>
-</div>
-<hr>
+    <h3 onclick="toggleAccordion('teaching')" style="cursor: pointer;">Teaching</h3>
+    <div id="teaching" style="display: none; font-size: 13px;">
+        <p><strong>Lecturing at B.Sc. Mathematics, University of Crete:</strong></p>
+        <ul style="list-style-type: square;">
+            <li>Numerical Linear Algebra, Spring Semester 2024-2025</li>
+        </ul>
+	
+        <p><strong>Lecturing at B.Sc. Mathematics, University of Patras:</strong></p>
+        <ul style="list-style-type: square;">
+            <li>Numerical solution of transcendental equations, Fall Semester 2022-2023</li>
+            <li>Numerical solution of ODEs, Spring Semester 2022-2023</li>
+            <li>Numerical solution of PDEs, Spring Semester 2022-2023, 2021-2022</li>
+            <li>Numerical Linear Algebra, Fall Semester 2021-2022</li>
+            <li>Discrete Mathematics, Spring Semester 2021-2022</li>
+        </ul>
+
+        <p><strong>Tutoring at University of Amsterdam:</strong></p>
+        <ul style="list-style-type: square;">
+            <li>Numerical Algorithms, M.Sc. Computational Sciences, Fall Semester 2016-2017</li>
+            <li>Numerical Analysis, B.Sc. Mathematics, Spring Semester 2015-2016, Spring Semester 2014-2015, Fall Semester 2013-2014</li>
+            <li>Differential Equations, B.Sc. Mathematics, Fall Semester 2015-2016, Fall Semester 2014-2015, Spring Semester 2013-2014, Spring Semester 2012-2013</li>
+        </ul>
+    </div>
+
+    <hr>
 	  
-<div class="latest-news">
-    
-    <h3>News</h3>
-	<p><strong> [Oct 2026] Preprint</strong> "Residual minimisation for transport-based optimal control", with <a href="https://tristanpryer.com/">Tristan Pryer</a></p>
-	<p><strong> [Jul 2026] Invited Talk</strong> at the Third Congress of Greek Mathematicians (<a href="https://hms.gr/tcgm2026/">TCGM-2026</a>), National and Kapodistrian University of Athens and National Technical University of Athens.</p>
-	<p><strong> [Jan 2026] Talk</strong> at the <a href="https://jc.iacm.forth.gr/"> Journal Club on AI </a>, Institute of Applied and Computational Mathematics, FORTH, Greece. </p>
-	<p><strong> [Dec 2025] Invited Talk</strong> at the 19th Panhellenic Conference in Mathematical Analysis, School of Applied Mathematical and Physics Science, NTUA, Athens, Greece.</p>
-    <p><strong> [Jul 2025] Preprint</strong> "Deep Uzawa for kinetic transport with Lagrange enforced boundaries", with <a href="https://www.iacm.forth.gr/component/quix/91-people-makridakis/">Charalampos Makridakis</a>, <a href="https://researchportal.bath.ac.uk/en/persons/aaron-pim">Aaron Pim</a>, and <a href="https://tristanpryer.com/">Tristan Pryer</a>, <a href="https://doi.org/10.48550/arXiv.2507.19907">arXiv.2507.19907</a></p>
-    <p><strong> [Feb 2025] Preprint</strong> "A posteriori certification for neural network approximations to PDEs", with <a href="https://www.uni-ulm.de/mawi/institut-fuer-numerische-mathematik/institut/mitarbeiter/#">Lewin Ernst (Ulm)</a> and <a href="https://www.uni-ulm.de/mawi/institut-fuer-numerische-mathematik/institut/mitarbeiter/prof-dr-karsten-urban/">Karsten Urban (Ulm)</a>, <a href="https://doi.org/10.48550/arXiv.2502.20336">arXiv.2502.20336</a></p>	
-    <p><strong> [Feb 2025] Teaching </strong> "Numerical Linear Algebra" for the spring semester at B.Sc. Mathematics, University of Crete. </p>	
-    <p><strong> [Jan 2025] Talk</strong> "Certification of neural network solutions to PDEs" (Joint work with Lewin Ernst (Ulm) and Karsten Urban (Ulm), at the BIT 65th Anniversary Conference, Uppsala University (Sweden).</p>    </div>    
+    <div class="latest-news">
+        <h3>News</h3>
+        <p><strong> [Oct 2026] Preprint</strong> "Residual minimisation for transport-based optimal control", with <a href="https://tristanpryer.com/">Tristan Pryer</a></p>
+        <p><strong> [Jul 2026] Invited Talk</strong> at the Third Congress of Greek Mathematicians (<a href="https://hms.gr/tcgm2026/">TCGM-2026</a>), National and Kapodistrian University of Athens and National Technical University of Athens.</p>
+        <p><strong> [Jan 2026] Talk</strong> at the <a href="https://jc.iacm.forth.gr/"> Journal Club on AI </a>, Institute of Applied and Computational Mathematics, FORTH, Greece. </p>
+        <p><strong> [Dec 2025] Invited Talk</strong> at the 19th Panhellenic Conference in Mathematical Analysis, School of Applied Mathematical and Physics Science, NTUA, Athens, Greece.</p>
+        <p><strong> [Jul 2025] Preprint</strong> "Deep Uzawa for kinetic transport with Lagrange enforced boundaries", with <a href="https://www.iacm.forth.gr/component/quix/91-people-makridakis/">Charalampos Makridakis</a>, <a href="https://researchportal.bath.ac.uk/en/persons/aaron-pim">Aaron Pim</a>, and <a href="https://tristanpryer.com/">Tristan Pryer</a>, <a href="https://doi.org/10.48550/arXiv.2507.19907">arXiv.2507.19907</a></p>
+        <p><strong> [Feb 2025] Preprint</strong> "A posteriori certification for neural network approximations to PDEs", with <a href="https://www.uni-ulm.de/mawi/institut-fuer-numerische-mathematik/institut/mitarbeiter/#">Lewin Ernst (Ulm)</a> and <a href="https://www.uni-ulm.de/mawi/institut-fuer-numerische-mathematik/institut/mitarbeiter/prof-dr-karsten-urban/">Karsten Urban (Ulm)</a>, <a href="https://doi.org/10.48550/arXiv.2502.20336">arXiv.2502.20336</a></p>	
+        <p><strong> [Feb 2025] Teaching </strong> "Numerical Linear Algebra" for the spring semester at B.Sc. Mathematics, University of Crete. </p>	
+        <p><strong> [Jan 2025] Talk</strong> "Certification of neural network solutions to PDEs" (Joint work with Lewin Ernst (Ulm) and Karsten Urban (Ulm), at the BIT 65th Anniversary Conference, Uppsala University (Sweden).</p>
+    </div>    
 </div>
 	  
 <hr>
+
 <div style="text-align: center; margin-top: 50px;">
     <p>&copy; 2025 Nikolaos Rekatsinas</p>
 </div>
