@@ -51,19 +51,17 @@
     	padding: 20px 0;
 		}
 
-        .bio-block img {
-            flex-shrink: 0;
-        }
+        .bio-block > p {
+    margin: 0;
+}
 
-        .bio-text {
-            font-size: 13px;
-            text-align: left;
-        }
+.bio-block > p img {
+    display: block;
+}
 
 .bio-text {
     display: flex;
     flex-direction: column;
-    align-self: stretch;
 }
 
 .contact-bottom {
@@ -82,11 +80,6 @@
     width: 20px;
     height: 20px;
     display: block;
-    transition: opacity 0.2s;
-}
-
-.academic-links img:hover {
-    opacity: 0.65;
 }
         #publications h4 {
             margin-left: 0;
