@@ -3,16 +3,6 @@
 <head>
     <meta charset="UTF-8">
 
-    <script>
-        (function () {
-            const savedTheme = localStorage.getItem("theme");
-            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-                document.documentElement.classList.add("dark-mode");
-            }
-        })();
-    </script>
-
     <title>Nikolaos Rekatsinas | Homepage</title>
     <meta name="description" content="Homepage of Nikolaos Rekatsinas, Postdoctoral Researcher">
     <meta name="keywords" content="numerical methods, PDEs, adaptive methods, computational mathematics">
@@ -92,74 +82,7 @@
             margin-left: 1.2em;
             padding-left: 0;
         }
-
-        body {
-            transition: background-color 0.25s ease, color 0.25s ease;
-        }
-
-        html.dark-mode body {
-            background-color: #161616 !important;
-            color: #e8e8e8 !important;
-        }
-
-        html.dark-mode h1,
-        html.dark-mode h2,
-        html.dark-mode h3,
-        html.dark-mode h4,
-        html.dark-mode h5,
-        html.dark-mode h6,
-        html.dark-mode p,
-        html.dark-mode li,
-        html.dark-mode .bio-text {
-            color: #e8e8e8;
-        }
-
-        html.dark-mode a {
-            color: #8ab4f8 !important;
-        }
-
-        html.dark-mode a:visited {
-            color: #c7a9ff !important;
-        }
-
-        html.dark-mode hr {
-            border-color: #4a4a4a !important;
-        }
-
-        html.dark-mode .latest-news h3 {
-            animation: flashing-dark 1s infinite;
-        }
-
-        @keyframes flashing-dark {
-            0%   { color: #e8e8e8; }
-            50%  { color: #ff6b6b; }
-            100% { color: #e8e8e8; }
-        }
-
-        .theme-toggle {
-		    position: fixed;
-		    top: 18px;
-		    right: 22px;
-		    width: 30px;
-		    height: 30px;
-		    border: 1px solid #999;
-		    border-radius: 50%;
-		    background: white;
-		    color: #222;
-		    font-size: 14px;
-		    cursor: pointer;
-		    z-index: 1000;
-		}
-
-        html.dark-mode .theme-toggle {
-            background: #222;
-            color: #eee;
-            border-color: #666;
-        }
-
-        .theme-toggle:hover {
-            opacity: 0.8;
-        }
+        
     </style>
 
     <script>
@@ -199,33 +122,11 @@ function toggleSubAccordion(sectionId) {
         : "none";
 }
 
-
-/* dark mode */
-document.addEventListener("DOMContentLoaded", function () {
-    const button = document.getElementById("theme-toggle");
-
-    function updateButton() {
-        const dark = document.documentElement.classList.contains("dark-mode");
-        button.textContent = dark ? "☀" : "☾";
-        button.title = dark ? "Switch to light mode" : "Switch to dark mode";
-    }
-
-    updateButton();
-
-    button.addEventListener("click", function () {
-        document.documentElement.classList.toggle("dark-mode");
-        const dark = document.documentElement.classList.contains("dark-mode");
-        localStorage.setItem("theme", dark ? "dark" : "light");
-        updateButton();
-    });
-});
 </script>
     
 </head>
 
 <body>
-
-<button id="theme-toggle" class="theme-toggle" type="button" title="Switch to dark mode">☾</button>
 
 <div style="text-align: center; margin-top: 50px;">
     <h2>Homepage of Nikolaos Rekatsinas</h2>
