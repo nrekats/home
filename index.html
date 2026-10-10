@@ -41,14 +41,15 @@
             100% { color: black; }
         }
 
+		
         .bio-block {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px 0;
-        }
+    	display: flex;
+   	 	gap: 30px;
+    	align-items: stretch;
+    	max-width: 1200px;
+    	margin: auto;
+    	padding: 20px 0;
+		}
 
         .bio-block img {
             flex-shrink: 0;
@@ -59,7 +60,17 @@
             text-align: left;
         }
 
-		.academic-links {
+.bio-text {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.contact-bottom {
+    margin-top: auto;
+}
+
+.academic-links {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -77,7 +88,6 @@
 .academic-links img:hover {
     opacity: 0.65;
 }
-
         #publications h4 {
             margin-left: 0;
         }
@@ -227,34 +237,34 @@ document.addEventListener("DOMContentLoaded", function () {
     <hr />
 </div>
 
-<div class="bio-block">
-    <p><img src="img/mugshot1.png" width="235" height="177.2" alt="Nikolaos Rekatsinas' Photo" /></p>
-    <div class="bio-text">
-        Email:<strong>n [dot] rekatsinas</strong> [at] outlook.com, [at] iacm.forth.gr<br>
-        
+<div class="bio-text">
+
+    <div>
+        Email:<strong>n [dot] rekatsinas</strong> [at] outlook.com, [at] iacm.forth.gr
+    </div>
+
+    <div class="contact-bottom">
         Institute of Applied and Computational Mathematics,<br>
         Foundation for Research and Technology<br>
         Nikolaou Plastira 100, Vassilika Vouton,<br>
         GR 700 13 Heraklion, Crete, Greece<br>
-        Tel: +30 2810 391989<br>
-		<div class="academic-links">
-    	<a href="https://orcid.org/0000-0002-7283-3306"
-       		target="_blank"
-       		rel="noopener noreferrer"
-       		title="ORCID">
-        	<img src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/orcid.svg"
-             alt="ORCID">
-    	</a>
+        Tel: +30 2810 391989
 
-    	<a href="https://scholar.google.gr/citations?hl=el&amp;user=qVYeX30AAAAJ"
-       		target="_blank"
-       		rel="noopener noreferrer"
-       		title="Google Scholar">
-        	<img src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlescholar.svg"
-             alt="Google Scholar">
-    	</a>
-	</div>
+        <div class="academic-links">
+            <a href="https://orcid.org/0000-0002-7283-3306"
+               target="_blank" rel="noopener noreferrer" title="ORCID">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/orcid.svg"
+                     alt="ORCID">
+            </a>
+
+            <a href="https://scholar.google.gr/citations?hl=el&amp;user=qVYeX30AAAAJ"
+               target="_blank" rel="noopener noreferrer" title="Google Scholar">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlescholar.svg"
+                     alt="Google Scholar">
+            </a>
+        </div>
     </div>
+
 </div>
 
 <hr />
