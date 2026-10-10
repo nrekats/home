@@ -42,16 +42,16 @@
         }
 
 		
-        .bio-block {
-    	display: flex;
-   	 	gap: 30px;
-    	align-items: stretch;
-    	max-width: 1200px;
-    	margin: auto;
-    	padding: 20px 0;
-		}
+.bio-block {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
 
-        .bio-block > p {
+.bio-block > p {
     margin: 0;
 }
 
@@ -60,12 +60,10 @@
 }
 
 .bio-text {
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
-
-.contact-bottom {
-    margin-top: auto;
+.bio-email {
+    margin-bottom: 30px;
 }
 
 .academic-links {
@@ -80,6 +78,11 @@
     width: 20px;
     height: 20px;
     display: block;
+    transition: opacity 0.2s;
+}
+
+.academic-links img:hover {
+    opacity: 0.65;
 }
         #publications h4 {
             margin-left: 0;
@@ -230,13 +233,21 @@ document.addEventListener("DOMContentLoaded", function () {
     <hr />
 </div>
 
-<div class="bio-text">
+<div class="bio-block">
 
-    <div>
-        Email:<strong>n [dot] rekatsinas</strong> [at] outlook.com, [at] iacm.forth.gr
-    </div>
+    <p>
+        <img src="img/mugshot1.png"
+             width="235"
+             height="177.2"
+             alt="Nikolaos Rekatsinas' Photo" />
+    </p>
 
-    <div class="contact-bottom">
+    <div class="bio-text">
+
+        <div class="bio-email">
+            Email:<strong>n [dot] rekatsinas</strong> [at] outlook.com, [at] iacm.forth.gr
+        </div>
+
         Institute of Applied and Computational Mathematics,<br>
         Foundation for Research and Technology<br>
         Nikolaou Plastira 100, Vassilika Vouton,<br>
@@ -245,19 +256,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div class="academic-links">
             <a href="https://orcid.org/0000-0002-7283-3306"
-               target="_blank" rel="noopener noreferrer" title="ORCID">
+               target="_blank"
+               rel="noopener noreferrer"
+               title="ORCID">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/orcid.svg"
                      alt="ORCID">
             </a>
 
             <a href="https://scholar.google.gr/citations?hl=el&amp;user=qVYeX30AAAAJ"
-               target="_blank" rel="noopener noreferrer" title="Google Scholar">
+               target="_blank"
+               rel="noopener noreferrer"
+               title="Google Scholar">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlescholar.svg"
                      alt="Google Scholar">
             </a>
         </div>
-    </div>
 
+    </div>
 </div>
 
 <hr />
