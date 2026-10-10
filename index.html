@@ -59,6 +59,23 @@
             text-align: left;
         }
 
+		.academic-links {
+    	display: flex;
+    	align-items: center;
+    	gap: 15px;
+    	margin-top: 8px;
+		}
+
+		.academic-links img {
+		    width: 26px;
+		    height: 26px;
+		    transition: opacity 0.2s;
+		}
+		
+		.academic-links img:hover {
+		    opacity: 0.65;
+		}
+
         #publications h4 {
             margin-left: 0;
         }
@@ -212,7 +229,23 @@ document.addEventListener("DOMContentLoaded", function () {
     <p><img src="img/mugshot1.png" width="235" height="177.2" alt="Nikolaos Rekatsinas' Photo" /></p>
     <div class="bio-text">
         Email:<strong>n [dot] rekatsinas</strong> [at] outlook.com, [at] iacm.forth.gr<br>	
-        ORCID: <a href='https://orcid.org/0000-0002-7283-3306'>0000-0002-7283-3306</a></p><br>
+        <div class="academic-links">
+    <a href="https://orcid.org/0000-0002-7283-3306"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="ORCID">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/orcid.svg"
+             alt="ORCID">
+    </a>
+
+    <a href="YOUR_GOOGLE_SCHOLAR_URL"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Google Scholar">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlescholar.svg"
+             alt="Google Scholar">
+    </a>
+</div>
         Institute of Applied and Computational Mathematics,<br>
         Foundation for Research and Technology<br>
         Nikolaou Plastira 100, Vassilika Vouton,<br>
